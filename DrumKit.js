@@ -7,11 +7,13 @@ var buttonLength=document.querySelectorAll(".drum").length;
 document.querySelectorAll(".drum")[i].addEventListener("click",function(){
     var buttonInnerHtml= this.innerHTML;
     maksound(buttonInnerHtml);
+    keyAnimation(buttonInnerHtml);
 
 });
 }
 document.addEventListener("keydown",function(event){
     maksound(event.key);
+    keyAnimation(event.key);
 })
 function maksound(key)
 {
@@ -48,4 +50,16 @@ function maksound(key)
         default :
             console.log(buttonInnerHtml);
     }
+}
+function keyAnimation(keyt)
+{
+    
+    var keyClicked=document.querySelector("."+keyt);
+    
+    keyClicked.classList.add("pressed");
+    setTimeout(function(){
+        keyClicked.classList.remove("pressed");
+    },100);
+    
+    
 }
