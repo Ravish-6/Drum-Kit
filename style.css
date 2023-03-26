@@ -58,3 +58,9 @@
 {
     background-image: url('images/tom4.png');
 }
+.pressed
+{
+    box-shadow: 0 7px 3px 0 #37306B;
+    opacity: 0.5;
+    color: red;
+}
